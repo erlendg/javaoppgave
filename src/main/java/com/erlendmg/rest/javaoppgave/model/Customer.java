@@ -16,84 +16,88 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Customer {
     
-    private long kundenummer;
-    private String fornavn;
-    private String etternavn;
-    private String epost;
-    private int tlf;
-    private int mobil;
-    private Date opprettet;
+    private long customerNumber;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private int phone;
+    private int mobile;
+    private Date created;
     
     //private Map<Long, Avtale> avtaler;
 
     public Customer() {
     }
 
-    public Customer(long kundenummer, String fornavn, String etternavn, String epost, int tlf, int mobil) {
-        this.kundenummer = kundenummer;
-        this.fornavn = fornavn;
-        this.etternavn = etternavn;
-        this.epost = epost;
-        this.tlf = tlf;
-        this.mobil = mobil;
-        this.opprettet = new Date();
+    public Customer(long customerNumber, String firstName, String lastName, String email, int phone, int mobile) {
+        this.customerNumber = customerNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.mobile = mobile;
+        this.created = new Date();
     }
 
-    public long getKundenummer() {
-        return kundenummer;
+    public long getCustomerNumber() {
+        return customerNumber;
     }
 
-    public void setKundenummer(long kundenummer) {
-        this.kundenummer = kundenummer;
+    public void setCustomerNumber(long customerNumber) {
+        this.customerNumber = customerNumber;
     }
 
-    public String getFornavn() {
-        return fornavn;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFornavn(String fornavn) {
-        this.fornavn = fornavn;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getEtternavn() {
-        return etternavn;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setEtternavn(String etternavn) {
-        this.etternavn = etternavn;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getEpost() {
-        return epost;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEpost(String epost) {
-        this.epost = epost;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getTlf() {
-        return tlf;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setTlf(int tlf) {
-        this.tlf = tlf;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-    public int getMobil() {
-        return mobil;
+    public int getMobile() {
+        return mobile;
     }
 
-    public void setMobil(int mobil) {
-        this.mobil = mobil;
+    public void setMobile(int mobile) {
+        this.mobile = mobile;
     }
 
-    public Date getOpprettet() {
-        return opprettet;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setOpprettet(Date opprettet) {
-        this.opprettet = opprettet;
+    public void setCreated(Date created) {
+        this.created = created;
     }
+    
+    
+
+    
     
     
     

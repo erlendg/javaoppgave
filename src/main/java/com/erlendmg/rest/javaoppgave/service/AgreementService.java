@@ -15,16 +15,15 @@ import java.util.Map;
  */
 public class AgreementService {
     
-    private Map<Long, Agreement> agreements = Fagsystem.getAgreements();
+    private FagsystemService fagsystemService = new FagsystemService();
     
     public AgreementService(){
         
     }
     //metode for å opprette ny forsikringsavtale
     public Agreement createAgreement(Agreement agreement){
-        agreement.setId(agreements.size()+1);
-        agreements.put(agreement.getId(), agreement);
-        return agreement;
+        return fagsystemService.createAgreement(agreement);
+        
     }
     
 }

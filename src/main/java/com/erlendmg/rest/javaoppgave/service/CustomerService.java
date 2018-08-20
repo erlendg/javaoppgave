@@ -17,13 +17,13 @@ import java.util.Map;
  */
 public class CustomerService {
     
-    private Map<Long, Customer> fagsystem = Fagsystem.getCustomers();
+    FagsystemService fagsystemService = new FagsystemService();
     
     public CustomerService(){
         
     }
     
     public List<Customer> getAllCustomers(){
-        return new ArrayList<Customer>(fagsystem.values());
+        return new ArrayList<Customer>(fagsystemService.getCustomers());
     }
 }
