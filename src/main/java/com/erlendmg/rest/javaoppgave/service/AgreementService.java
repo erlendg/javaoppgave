@@ -9,6 +9,8 @@ import com.erlendmg.rest.javaoppgave.external.Fagsystem;
 import com.erlendmg.rest.javaoppgave.model.Agreement;
 import com.erlendmg.rest.javaoppgave.model.Customer;
 import com.erlendmg.rest.javaoppgave.model.NewAgreement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,6 +29,7 @@ public class AgreementService {
     //Opprett Avtale
     //metode for å opprette ny forsikringsavtale
     public Agreement createNewAgreement(NewAgreement newAgreement){
+        System.out.println("AgreementService: createNewAgreement");
         //Create new customer:
         Customer customer = customerService.createNewCustomer(newAgreement);
         //create agreement:
@@ -48,7 +51,13 @@ public class AgreementService {
     }
     
     public Agreement createAgreement(NewAgreement newAgreement, long customerNumber){
+        System.out.println("AgreementService: createAgreement");
         return fagsystemService.createAgreement(newAgreement, customerNumber);
+    }
+    
+    public List<Agreement> getAllAgreements(){
+        return new ArrayList<Agreement>(fagsystemService.getAgreements());
+               
     }
     
 }

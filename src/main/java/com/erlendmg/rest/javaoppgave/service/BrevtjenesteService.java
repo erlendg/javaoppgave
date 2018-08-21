@@ -21,6 +21,7 @@ public class BrevtjenesteService {
     }
     
     public String sendAgreement(Agreement agreement, Customer customer){
+        System.out.println("BrevtjenesteService: sendAgreement");
         return brevtjeneste.queueMail(agreement, customer);
         
     }

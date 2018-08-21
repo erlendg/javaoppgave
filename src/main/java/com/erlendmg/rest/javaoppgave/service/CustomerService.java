@@ -29,6 +29,7 @@ public class CustomerService {
     }
     
     public Customer createNewCustomer(NewAgreement newAgreement){
+        System.out.println("CustomerService: createNewCustomer");
         return fagsystemService.createCustomer(newAgreement);
     }
 }

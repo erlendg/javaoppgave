@@ -21,6 +21,7 @@ public class Brevtjeneste {
      }
      
      public String queueMail(Agreement agreement, Customer customer){
+         System.out.println("Brevtjeneste: queueMail");
          if(agreement != null && customer != null){
             return "sendt";
         } else {

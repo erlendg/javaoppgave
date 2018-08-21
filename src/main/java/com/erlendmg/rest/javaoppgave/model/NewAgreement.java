@@ -6,11 +6,13 @@
 package com.erlendmg.rest.javaoppgave.model;
 
 import java.util.Date;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Erlend
  */
+@XmlRootElement
 public class NewAgreement {
     
     //information about customer:
@@ -25,6 +27,7 @@ public class NewAgreement {
     private String details;
 
     public NewAgreement() {
+    
     }
 
     public NewAgreement(String firstName, String lastName, String email, int phone, int mobile, String type, String details) {

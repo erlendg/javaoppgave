@@ -52,5 +52,9 @@ public class FagsystemService {
         return new ArrayList<Customer>(customers.values());
     }
     
+    public List<Agreement> getAgreements(){
+        return new ArrayList<Agreement>(agreements.values());
+    }
+    
     
 }

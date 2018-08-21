@@ -6,6 +6,7 @@
 package com.erlendmg.rest.javaoppgave.model;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -24,7 +25,7 @@ public class Customer {
     private int mobile;
     private Date created;
     
-    private Map<Long, Agreement> agreements;
+    private Map<Long, Agreement> agreements = new HashMap<>();
 
     public Customer() {
     }
@@ -37,6 +38,7 @@ public class Customer {
         this.phone = phone;
         this.mobile = mobile;
         this.created = new Date();
+        
     }
 
     public Customer(NewAgreement newAgreement, long customerNumber){
@@ -114,6 +116,7 @@ public class Customer {
     }
     
     public void addAgreement(Agreement agreement){
+        System.out.println("Customer: addAgreement");
         agreements.put(agreement.getId(), agreement);
     }
   

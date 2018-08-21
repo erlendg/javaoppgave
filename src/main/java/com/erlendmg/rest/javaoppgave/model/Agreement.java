@@ -59,6 +59,7 @@ public class Agreement {
     }
 
     public void setStatus(String status) {
+        System.out.println("Agreement: setStatus");
         this.status = status;
     }
 

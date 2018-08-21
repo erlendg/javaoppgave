@@ -8,6 +8,8 @@ package com.erlendmg.rest.javaoppgave.resources;
 import com.erlendmg.rest.javaoppgave.model.Agreement;
 import com.erlendmg.rest.javaoppgave.model.NewAgreement;
 import com.erlendmg.rest.javaoppgave.service.AgreementService;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -28,6 +30,12 @@ public class AgreementResource {
     
     @POST
     public Agreement createNewAgreement(NewAgreement newAgreement){
+        System.out.println("@POST createNewAgreement");
         return agreementService.createNewAgreement(newAgreement);
+    }
+    
+    @GET
+    public List<Agreement> getAllAgreements(){
+        return agreementService.getAllAgreements();
     }
 }
