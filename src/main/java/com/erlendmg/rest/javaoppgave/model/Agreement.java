@@ -5,6 +5,8 @@
  */
 package com.erlendmg.rest.javaoppgave.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -19,6 +21,8 @@ public class Agreement {
     private String status;
     private String type;
     private String details;
+    
+    private List<Link> links = new ArrayList<>();
 
     public Agreement() {
     }
@@ -77,6 +81,21 @@ public class Agreement {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+    
+     public List<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+    
+    public void addLink(String url, String rel ){
+        Link link = new Link();
+        link.setLink(url);
+        link.setRel(rel);
+        links.add(link);
     }
     
     

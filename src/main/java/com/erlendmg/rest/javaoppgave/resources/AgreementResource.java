@@ -31,11 +31,13 @@ public class AgreementResource {
     @POST
     public Agreement createNewAgreement(NewAgreement newAgreement){
         System.out.println("@POST createNewAgreement");
-        return agreementService.createNewAgreement(newAgreement);
+        Agreement agreement = agreementService.createNewAgreement(newAgreement);
+        return agreement;
     }
     
     @GET
     public List<Agreement> getAllAgreements(){
+        
         return agreementService.getAllAgreements();
     }
 }

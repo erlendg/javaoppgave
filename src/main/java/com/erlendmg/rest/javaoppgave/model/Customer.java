@@ -5,8 +5,10 @@
  */
 package com.erlendmg.rest.javaoppgave.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -26,6 +28,8 @@ public class Customer {
     private Date created;
     
     private Map<Long, Agreement> agreements = new HashMap<>();
+    
+    private List<Link> links = new ArrayList<>();
 
     public Customer() {
     }
@@ -118,6 +122,21 @@ public class Customer {
     public void addAgreement(Agreement agreement){
         System.out.println("Customer: addAgreement");
         agreements.put(agreement.getId(), agreement);
+    }
+    
+    public List<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+    
+    public void addLink(String url, String rel ){
+        Link link = new Link();
+        link.setLink(url);
+        link.setRel(rel);
+        links.add(link);
     }
   
 }
