@@ -20,7 +20,7 @@ public class FagsystemService {
     
     private Map<Long, Agreement> agreements = Fagsystem.getAgreements();
     private Map<Long, Customer> customers = Fagsystem.getCustomers();
-
+    
     public Agreement createAgreement(Agreement agreement) {
         agreement.setId(agreements.size()+1);
         agreements.put(agreement.getId(), agreement);

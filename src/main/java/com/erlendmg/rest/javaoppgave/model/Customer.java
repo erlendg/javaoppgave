@@ -24,7 +24,7 @@ public class Customer {
     private int mobile;
     private Date created;
     
-    //private Map<Long, Avtale> avtaler;
+    private Map<Long, Agreement> agreements;
 
     public Customer() {
     }
@@ -39,6 +39,16 @@ public class Customer {
         this.created = new Date();
     }
 
+    public Customer(NewAgreement newAgreement, long customerNumber){
+        this.customerNumber = customerNumber;
+        this.firstName = newAgreement.getFirstName();
+        this.lastName = newAgreement.getLastName();
+        this.email = newAgreement.getEmail();
+        this.phone = newAgreement.getPhone();
+        this.mobile = newAgreement.getMobile();
+        this.created = new Date();
+    }
+    
     public long getCustomerNumber() {
         return customerNumber;
     }
@@ -94,14 +104,17 @@ public class Customer {
     public void setCreated(Date created) {
         this.created = created;
     }
-    
-    
 
+    public Map<Long, Agreement> getAvtaler() {
+        return agreements;
+    }
+
+    public void setAvtaler(Map<Long, Agreement> avtaler) {
+        this.agreements = avtaler;
+    }
     
-    
-    
-    
-    
-    
-   
+    public void addAgreement(Agreement agreement){
+        agreements.put(agreement.getId(), agreement);
+    }
+  
 }

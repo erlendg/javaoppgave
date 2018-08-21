@@ -17,16 +17,25 @@ public class Agreement {
     private long id;
     private long customernumber;
     private String status;
+    private String type;
     private String details;
 
     public Agreement() {
     }
 
-    public Agreement(long id, long customernumber, String status, String details) {
+    public Agreement(long id, long customernumber, String status, String type, String details) {
         this.id = id;
         this.customernumber = customernumber;
         this.status = status;
         this.details = details;
+    }
+    
+    public Agreement(NewAgreement newAgreement, long id, long customernumber, String status){
+        this.id = id;
+        this.customernumber = customernumber;
+        this.status = status;
+        this.type = newAgreement.getType();
+        this.details = newAgreement.getDetails();
     }
 
     public long getId() {
@@ -51,6 +60,14 @@ public class Agreement {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getDetails() {

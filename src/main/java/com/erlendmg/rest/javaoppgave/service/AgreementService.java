@@ -20,10 +20,13 @@ public class AgreementService {
     public AgreementService(){
         
     }
+    //Opprett Avtale
     //metode for å opprette ny forsikringsavtale
     public Agreement createAgreement(Agreement agreement){
-        return fagsystemService.createAgreement(agreement);
+        agreement = fagsystemService.createAgreement(agreement);
         
+        
+        return null;
     }
     
 }
