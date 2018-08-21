@@ -5,10 +5,29 @@
  */
 package com.erlendmg.rest.javaoppgave.resources;
 
+import com.erlendmg.rest.javaoppgave.model.Agreement;
+import com.erlendmg.rest.javaoppgave.model.NewAgreement;
+import com.erlendmg.rest.javaoppgave.service.AgreementService;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 /**
  *
  * @author Erlend
  */
+@Path("/agreements")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class AgreementResource {
     
+    private AgreementService agreementService = new AgreementService();
+    
+    @POST
+    public Agreement createNewAgreement(NewAgreement newAgreement){
+        return agreementService.createNewAgreement(newAgreement);
+    }
 }

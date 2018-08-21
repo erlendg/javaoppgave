@@ -8,6 +8,7 @@ package com.erlendmg.rest.javaoppgave.service;
 import com.erlendmg.rest.javaoppgave.external.Fagsystem;
 import com.erlendmg.rest.javaoppgave.model.Agreement;
 import com.erlendmg.rest.javaoppgave.model.Customer;
+import com.erlendmg.rest.javaoppgave.model.NewAgreement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,11 +29,23 @@ public class FagsystemService {
     
     }
     
+    public Agreement createAgreement(NewAgreement newAgreement, long customernumber){
+        Agreement agreement = new Agreement(newAgreement, agreements.size()+1, customernumber, "Processing");
+        agreements.put(agreement.getId(), agreement);
+        return agreement;
+    }
+    
     public Customer createCustomer(Customer customer) {
         customer.setCustomerNumber(customers.size()+1);
         customers.put(customer.getCustomerNumber(), customer);
         return customer;
     
+    }
+    
+    public Customer createCustomer(NewAgreement newAgreement){
+        Customer customer = new Customer(newAgreement, customers.size()+1);
+        customers.put(customer.getCustomerNumber(), customer);
+        return customer;
     }
 
     public List<Customer> getCustomers() {

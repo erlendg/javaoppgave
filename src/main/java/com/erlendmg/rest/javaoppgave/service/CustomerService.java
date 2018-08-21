@@ -7,6 +7,7 @@ package com.erlendmg.rest.javaoppgave.service;
 
 import com.erlendmg.rest.javaoppgave.external.Fagsystem;
 import com.erlendmg.rest.javaoppgave.model.Customer;
+import com.erlendmg.rest.javaoppgave.model.NewAgreement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,5 +26,9 @@ public class CustomerService {
     
     public List<Customer> getAllCustomers(){
         return new ArrayList<Customer>(fagsystemService.getCustomers());
+    }
+    
+    public Customer createNewCustomer(NewAgreement newAgreement){
+        return fagsystemService.createCustomer(newAgreement);
     }
 }

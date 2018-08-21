@@ -5,6 +5,8 @@
  */
 package com.erlendmg.rest.javaoppgave.external;
 
+import com.erlendmg.rest.javaoppgave.model.Agreement;
+import com.erlendmg.rest.javaoppgave.model.Customer;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +16,16 @@ import java.util.Map;
  */
 public class Brevtjeneste {
     
+     public Brevtjeneste(){
+         
+     }
      
+     public String queueMail(Agreement agreement, Customer customer){
+         if(agreement != null && customer != null){
+            return "sendt";
+        } else {
+            return "feil";
+        }
+     }
     
 }
